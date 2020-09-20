@@ -36,6 +36,7 @@ const Student = {
   bloodStatus: "",
   expelled: false,
   prefect: false,
+  hacker: false,
 };
 
 function start() {
@@ -183,6 +184,7 @@ function prepareData(data) {
     }
 
     student.bloodStatus = "Unknown";
+    student.hacker = false;
 
     // console.table(student);
     allStudents.push(student);
@@ -452,15 +454,16 @@ function showDetails(student) {
       console.log("hacker");
       location.href = "heck_no.html";
       student.expelled = false;
-    } else if (student.expelled === true) {
-      allStudents.splice(allStudents.indexOf(student), 1);
-      expelledStudents.push(student);
-      console.log(expelledStudents);
-      buildList();
-      student.expelled = false;
-    } else {
-      student.expelled = true;
+    } else if (student.hacker === false) {
+      if (student.expelled === true) {
+        student.expelled = false;
+      } else {
+        student.expelled = true;
+      }
     }
+    allStudents.splice(allStudents.indexOf(student), 1);
+    expelledStudents.push(student);
+    console.log(expelledStudents);
     buildList();
     showDetails(student);
   }
