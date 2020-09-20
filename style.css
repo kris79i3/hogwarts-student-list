@@ -14,7 +14,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(svg/long-paper.png);
+  background-image: url(svg/long-paper-longer.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -429,6 +429,15 @@ CLASSES
   display: none;
 }
 
+.rotate {
+  animation: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  transform-origin: center;
+}
+
 .expelled-scale {
   animation: expelled-scale;
   animation-duration: 0.5s;
@@ -450,6 +459,12 @@ ANIMATIONS
   }
 }
 
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /**********************
 DESKTOP MEDIA
 **********************/
@@ -461,7 +476,7 @@ DESKTOP MEDIA
   #long-paper {
     left: 50%;
     transform: translateX(-50%);
-    height: 150vw;
+    height: 192vw;
     width: 60vw;
     z-index: 0;
   }

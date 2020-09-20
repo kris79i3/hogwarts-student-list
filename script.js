@@ -591,6 +591,7 @@ function showDetails(student) {
 
 function hackTheSystem() {
   hasBeenHacked = true;
+  document.querySelector("#hat").classList.add("rotate");
 
   //inject myself
   //- create an object from the student prototype
