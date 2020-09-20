@@ -387,7 +387,7 @@ function showDetails(student) {
   document.querySelector(".student-image").src = `images/${student.image}`;
   document.querySelector(
     ".prefect-emblem"
-  ).src = `svg/${student.house}-prefect.svg`;
+  ).src = `svg/${student.house}-prefect.png`;
   document.querySelector(".pop-up_firstname").textContent = student.firstName;
   document.querySelector(".pop-up_middlename").textContent = student.middleName;
   document.querySelector(".pop-up_lastname").textContent = student.lastName;
@@ -397,7 +397,7 @@ function showDetails(student) {
     student.bloodStatus;
   document.querySelector(
     ".house-banner"
-  ).src = `svg/${student.house}-banner.svg`;
+  ).src = `svg/${student.house}-banner.png`;
 
   //EXPELLED
   if (student.expelled === true) {
