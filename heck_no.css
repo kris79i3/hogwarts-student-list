@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  background-color: #000000;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Lumos", arial;
+  font-size: 5rem;
+  color: white;
+  margin: 0;
+  margin-top: 50px;
+  line-height: 80px;
+}
+
+a {
+  font-family: "Tangerine", cursive;
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: 0;
+  margin-bottom: 40px;
+}
