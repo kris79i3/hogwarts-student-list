@@ -1,0 +1,670 @@
+/*********************
+GENEREL
+*********************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3f382f;
+  margin: 0;
+}
+
+#long-paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(svg/long-paper.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 250vw;
+  width: 100vw;
+  z-index: -1;
+}
+
+h1 {
+  font-family: "Lumos", arial;
+  font-size: 1rem;
+}
+
+h2 {
+  font-family: "Lumos";
+  font-size: 0.8rem;
+}
+
+p,
+li,
+button {
+  font-family: "Tangerine", cursive;
+  font-size: 0.9rem;
+}
+
+/***********************
+INFO / BEGINNING
+***********************/
+#info h1 {
+  text-align: center;
+  margin: 0;
+}
+
+#info h2 {
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+#info p {
+  text-align: center;
+  margin: 0 0 4vw;
+}
+
+#emblem {
+  background-image: url(svg/hogwarts-emblem.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  height: 12vw;
+  margin: 55px 55px 18px;
+}
+
+/****************************
+SORTING PAPER / POP-UP PAPER
+****************************/
+#hat {
+  background-image: url(svg/sorting-hat.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 6.5vw;
+  width: 8.2vw;
+  top: 270px;
+  right: 88px;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+#hat:hover {
+  transform: scale(1.07);
+}
+
+#sorting,
+#details,
+#warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.61);
+  backdrop-filter: blur(8px);
+}
+
+#sorting .sort-paper,
+#details .pop-up-paper {
+  background-image: url(svg/small-paper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  height: 102vw;
+  width: 85vw;
+  top: 20%;
+  left: 8%;
+  padding-top: 10vw;
+}
+
+#sorting [data-action="expel"] {
+  line-height: 37px;
+  font-size: 1.3rem;
+}
+
+#sorting .close,
+#details .close {
+  position: absolute;
+  top: -2%;
+  right: 7%;
+  border: none;
+  background-color: transparent;
+  font-size: 4rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+}
+
+#sorting p,
+#sorting select {
+  display: block;
+  font-family: "Lumos", arial;
+  font-size: 1.5rem;
+  margin: 7vw 10vw;
+  border-bottom: #34312b solid 1px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#sorting select {
+  background-color: transparent;
+  border: none;
+  border-bottom: #34312b solid 1px;
+  outline: none;
+  width: 65vw;
+}
+
+/**************************
+LIST 
+**************************/
+#list-info,
+#student_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 8px 22vw;
+}
+
+#list-info h2 {
+  flex-grow: 1;
+  flex-basis: 200px;
+  font-size: 1rem;
+  margin: 23px 0 0px;
+}
+
+#list-info p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  max-width: 70ch;
+  margin: 0;
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+
+#list-info ul,
+#student_list ul {
+  border-bottom: #34312b solid 1px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 15px;
+  flex-grow: 1;
+  flex-basis: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+#list-info h2 + h2,
+#list-info li + li,
+#student_list li + li {
+  text-align: right;
+}
+
+#list-info li,
+#student_list li {
+  font-size: 1.3rem;
+  flex-grow: 2;
+  flex-basis: 200px;
+}
+
+#student_list li:nth-child(2) {
+  flex-grow: 1;
+  flex-basis: 50px;
+}
+
+/**********************
+POP-UP
+**********************/
+
+#details .pop-up-paper {
+  padding-top: 8vw;
+}
+
+#details .close {
+  top: -4%;
+  right: 5%;
+}
+
+#details .pop-up_list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 3vw;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.name-photo {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 10vw;
+}
+
+#details h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 2.2rem;
+  flex-grow: 2;
+  flex-basis: 100px;
+  margin: 0;
+}
+
+#details img {
+  flex-grow: 1;
+  flex-basis: 50px;
+  width: 10px;
+  height: auto;
+  padding: 5px 12px 12px;
+}
+
+#details ul {
+  padding: 0;
+  flex-grow: 2;
+  flex-basis: 100px;
+  margin: 0;
+}
+
+#details li {
+  list-style-type: none;
+  font-size: 1.7rem;
+  margin-bottom: 4vw;
+  border-bottom: #34312b solid 1px;
+  height: 22px;
+}
+
+#details li:nth-child(6) {
+  margin-bottom: 3vw;
+}
+
+#details ul:nth-child(2) {
+  font-family: "Tangerine", cursive;
+  text-align: right;
+  margin-right: 10vw;
+}
+
+#details .info li {
+  font-family: "Lumos", arial;
+  margin-left: 10vw;
+  font-size: 1.2rem;
+}
+
+#details .pop-up_buttons {
+  margin: 0 6vw 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#details .expel-button,
+#details .prefect-button {
+  font-family: "Lumos", arial;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  max-width: 5ch;
+  margin: 0 2vw;
+  outline: none;
+  cursor: pointer;
+  align-self: flex-end;
+  line-height: 15px;
+  transition: transform 0.2s linear;
+}
+
+#details .expel-button:hover,
+#details .prefect-button:hover {
+  transform: scale(1.07);
+}
+
+#details .house-banner {
+  width: 17vw;
+  position: fixed;
+  top: 95vw;
+  left: 0.5vw;
+}
+
+#details .prefect-emblem {
+  width: 14vw;
+  position: fixed;
+  top: 19vw;
+  right: 6vw;
+}
+
+#details .expelled-stamp-container {
+  position: absolute;
+  width: 75vw;
+  height: 50vh;
+  top: 41%;
+  left: 40%;
+  pointer-events: none;
+}
+
+#details .expelled-stamp {
+  background-image: url(svg/expelled.svg);
+  background-repeat: no-repeat;
+  transform-origin: center;
+  transform: rotate(-40deg);
+  width: 100%;
+  height: 100%;
+}
+
+/**************************
+PREFECT WARNING
+**************************/
+.prefect-paper {
+  background-image: url(svg/small-paper-rotated.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42vw;
+  height: 35vw;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.prefect-hogwarts-emblem {
+  width: 8vw;
+  align-self: center;
+  flex-grow: 1;
+  flex-basis: 500px;
+  margin: 4vw 18vw 0;
+}
+
+.prefect-paper h1 {
+  text-align: center;
+  margin: 2vw 0 0;
+  font-size: 5rem;
+  line-height: 0px;
+  flex-grow: 1;
+  flex-basis: 500px;
+}
+
+.prefect-paper h2 {
+  font-family: "Tangerine", cursive;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 45px;
+}
+
+.prefect-paper .button1,
+.prefect-paper .button2 {
+  text-align: left;
+  flex-grow: 1;
+  flex-basis: 250px;
+  height: 5.1vw;
+  /* width: 250px; */
+  margin: 0 1.5vw 2vw;
+  background-color: rgba(245, 234, 202, 0.71);
+  border-color: transparent;
+  border-radius: 15px;
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.prefect-paper .button1:hover,
+.prefect-paper .button2:hover {
+  background-color: rgb(209, 195, 153);
+}
+
+.prefect-paper .button1 img,
+.prefect-paper .button2 img {
+  width: 4vw;
+  margin: 0.5vw 0.7vw;
+}
+
+.prefect-paper .button1 p,
+.prefect-paper .button2 p {
+  font-size: 1.8rem;
+  font-family: "Lumos", arial;
+  margin-top: 3vw;
+  align-self: center;
+}
+
+/********************
+CLASSES
+********************/
+.hide {
+  display: none;
+}
+
+.expelled-scale {
+  animation: expelled-scale;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+/*********************
+ANIMATIONS
+********************/
+@keyframes expelled-scale {
+  0% {
+    transform-origin: -5%;
+    transform: scale(3);
+  }
+  100% {
+    transform-origin: -5%;
+    transform: scale(1);
+  }
+}
+
+/**********************
+DESKTOP MEDIA
+**********************/
+@media only screen and (min-width: 1024px) {
+  /*********************
+    GENEREL
+    *********************/
+
+  #long-paper {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150vw;
+    width: 60vw;
+    z-index: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p,
+  li,
+  button {
+    font-size: 1.5rem;
+  }
+
+  /***********************
+INFO / BEGINNING
+***********************/
+
+  #emblem {
+    height: 10vw;
+    background-size: 20%;
+    margin-top: 130px;
+  }
+
+  #info h2 {
+    margin: 25px 0 0;
+  }
+
+  /***************************
+SORTING PAPER
+***************************/
+  #hat {
+    height: 4.8vw;
+    width: 6vw;
+    top: 560px;
+    right: 0;
+    margin-right: 12vw;
+  }
+
+  #sorting {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    width: 0;
+    left: 51vw;
+  }
+
+  #sorting .sort-paper {
+    height: 24.5vw;
+    width: 20.5vw;
+    top: 45%;
+    right: 0vw;
+    padding-top: 1vw;
+    z-index: 100;
+    transition: transform 0.8s ease-out;
+  }
+
+  .sorting-move {
+    transform: translateX(0);
+    transform: translateX(26vw);
+  }
+
+  #sorting .close {
+    top: 0%;
+    right: 5.5%;
+    font-size: 3rem;
+  }
+
+  #sorting p,
+  #sorting select {
+    margin: 1.5vw 2.5vw;
+  }
+
+  #sorting select {
+    width: 15.5vw;
+  }
+
+  /************************
+LIST
+*************************/
+  #list-info,
+  #student_list {
+    margin: 8px 12vw;
+  }
+
+  #list-info h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  #list-info p {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  #list-info ul,
+  #student_list ul {
+    margin: 0 0 25px;
+    height: 33px;
+  }
+
+  #list-info li,
+  #student_list li {
+    font-size: 2.5rem;
+  }
+  /************************
+POP-UP
+*************************/
+  #details .pop-up-paper {
+    padding-top: 3.5vw;
+    width: 36vw;
+    height: 43vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+  }
+
+  #details .close {
+    top: 0;
+  }
+
+  .name-photo {
+    margin: 0 4vw;
+  }
+
+  #details h1 {
+    font-size: 3.5rem;
+  }
+
+  #details img {
+    padding: 5px 20px 20px;
+  }
+
+  #details .pop-up_list {
+    padding-top: 0;
+  }
+
+  #details ul:nth-child(2) {
+    margin-right: 5vw;
+  }
+
+  #details li {
+    margin-top: 1vw;
+    height: 2.5vw;
+    margin-bottom: 1.8vw;
+    font-size: 2.7rem;
+  }
+
+  #details .info li {
+    margin-left: 5vw;
+    font-size: 1.7rem;
+    line-height: 4vw;
+  }
+
+  #details li:nth-child(6) {
+    margin-bottom: 1vw;
+  }
+
+  #details .pop-up_buttons {
+    margin: 0 2vw 0;
+  }
+
+  #details .expel-button {
+    margin-top: 25px;
+    align-self: center;
+  }
+
+  #details .prefect-button {
+    line-height: 25px;
+  }
+
+  #details .house-banner {
+    width: 7vw;
+    top: 40.5vw;
+  }
+
+  #details .prefect-emblem {
+    width: 6vw;
+    top: 8.2vw;
+    right: 2.4vw;
+  }
+
+  #details .expelled-stamp-container {
+    width: 50vw;
+    height: 8vw;
+    top: 39%;
+    left: -2%;
+  }
+
+  /************************
+  KEYFRAMES
+  ************************/
+  @keyframes expelled-scale {
+    0% {
+      transform-origin: 50% 100%;
+      transform: scale(5);
+    }
+    100% {
+      transform-origin: 50% 100%;
+      transform: scale(1);
+    }
+  }
+}

@@ -4,8 +4,104 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://allfont.net/allfont.css?fonts=lumos" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <title>Hogwarts Student List</title>
   </head>
-  <body></body>
+  <body>
+    <section id="sorting">
+      <div class="sort-paper">
+        <select name="house" id="house">
+          <option value="*">All houses</option>
+          <option value="gryffindor">Gryffindor</option>
+          <option value="hufflepuff">Hufflepuff</option>
+          <option value="ravenclaw">Ravenclaw</option>
+          <option value="slytherin">Slytherin</option>
+      </select>
+        <button class="close">x</button>
+        <p data-action="sort" data-sort-direction="asc" data-sort="firstName">First name</p>
+        <p data-action="sort" data-sort-direction="asc" data-sort="lastName">Last name</p>
+        <p data-action="sort" data-sort-direction="asc" data-sort="house">House</p>
+        <p data-action="prefect" data-show="prefects">Prefects</p>
+      <p data-action="expel" data-show="expelled">Expelled students</p>
+      </div>
+    </section>
+    <div id="long-paper">
+    <section id="info">
+      <div id="emblem"></div>
+    <h1>Hogwarts School</br>of Witchcraft and Wizardry</h1>
+  <h2>Headmaster: Albus Dumbledore</h2>
+  <p>(Order of Merlin, First Class,Grand Sorc., Chf. Warlock,</br>Supreme Muugwump, International Confed. Of Wizards) </p>
+    </section>
+    <div id="hat"></div>
+  <section id="list-info">
+  <p>List of students enrolled at hogwarts in 1991</p>
+  <p class="student-counter"></p>
+  <h2>Name</h2>
+  <h2>House</h2>
+  </section>
+  <section id="student_list"></section>
+</div>
+  <section id="details" class="hide">
+    <div class="pop-up-paper">
+      <button class="close">x</button>
+      <div class="name-photo">
+      <h1 class="pop-up_fullname"></h1>
+      <img class="student-image">
+      </div>
+      <img class="prefect-emblem">
+      <div class="pop-up_list">
+      <ul class="info">
+        <li>First name</li>
+        <li>Middlename</li>
+        <li>Last name</li>
+        <li>Nickname</li>
+        <li>House</li>
+        <li>Blood status</li>
+      </ul>
+      <ul>
+        <li class="pop-up_firstname"></li>
+        <li class="pop-up_middlename"></li>
+        <li class="pop-up_lastname"></li>
+        <li class="pop-up_nickname"></li>
+        <li class="pop-up_house"></li>
+        <li class="pop-up_bloodstatus"></li>
+      </ul>
+      <div class="pop-up_buttons">
+         <button class="expel-button">Expel</button>
+        <button class="prefect-button">Become prefect</button>
+      </div>
+      <img class="house-banner">
+      <div class="expelled-stamp-container">
+        <div class="expelled-stamp"></div>
+      </div>
+  </section>
+<!-- </div>
+</div> -->
+<section id="warning" class="hide">
+  <div class="prefect-paper">
+    <img src="svg/hogwarts-emblem.png" alt="hogwarts emblem" class="prefect-hogwarts-emblem">
+  <h1>Oops!</h1>
+<h2>
+  You already have 2 prefects form this house!<br>Which one of the prefects would you like to revoke?
+</h2>
+<div class="button1">
+  <img>
+  <p class="student1"></p>
+</div>
+<div class="button2">
+  <img>
+  <p class="student2"></p>
+</div>
+</div>
+</section>
+  <template>
+    <ul>
+      <li class="fullname"></li>
+      <li class="house"></li>
+    </ul>
+  </template>
+
+  </body>
   <script src="script.js"></script>
 </html>
